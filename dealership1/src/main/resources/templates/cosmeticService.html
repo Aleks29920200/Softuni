@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{/head}"></div>
+<body>
+<div class="card">
+    <img class="card-img" src="/images/allServices.png" alt="picture">
+    <div class="card-img-overlay">
+            <div class="row">
+                <div th:each="service : ${allServices}"
+                     th:object="${service}"
+                     class="col-md-4 d-flex flex-column bg-text mb-3 rounded-circle">
+                    <h2>Name <strong th:text="*{name}"></strong></h2>
+                    <h4>Price: <strong th:text="*{price}"></strong></h4>
+                    <h4>Category: <strong th:text="*{category}"></strong></h4>
+                    <h4><a class="btn-block" th:href="@{'/cosmeticService/' + ${service.id}}">Detail info</a></h4>
+                </div>
+            </div>
+    </div>
+    <footer th:replace="~{/footer}"></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{/head}"></div>
+<body>
+<div class="card" >
+    <img class="card-img" src="/images/login.png" alt="picture">
+    <div class="card-img-overlay">
+        <div class="text-center">
+            <h1>
+                Transactions
+            </h1>
+        </div>
+        <div>
+            <table class="table-dark table-responsive">
+                <tr>
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                    <th>ServiceName</th>
+                    <th>ServicePrice</th>
+                    <th>Amount</th>
+                </tr>
+                <tr th:each="transaction : ${allTransactions}"
+                th:object="${transaction}">
+                    <td th:text="${transaction.startDate}"></td>
+                    <td th:text="${transaction.expirationDate}"></td>
+                    <td th:text="${transaction.service.name}"></td>
+                    <td th:text="${transaction.service.price}"></td>
+                    <td th:text="${transaction.bill.amount}"></td>
+                    <td><a type="button" class="btn-dark" th:href="@{'/all-transactions/' + ${transaction.id} }">
+                        Delete
+                    </a></td>
+                </tr>
+            </table>
+            <a type="button" class="btn-dark" th:href="@{all-transactions/qrcode}">
+                Finish
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
