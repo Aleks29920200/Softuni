@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <div th:replace="~{/head}"></div>
+<body>
+<div class="row">
+    <div th:object="${transaction}"
+         class="col-md-4 d-flex flex-column bg-text mb-3 rounded-circle">
+        <h4>Price: <strong th:text="*{startDate}"></strong></h4>
+        <h4>Price: <strong th:text="*{expirationDate}"></strong></h4>
+        <h4>Price: <strong th:text="*{bill.amount}"></strong></h4>
+        <h4>Price: <strong th:text="*{service.name}"></strong></h4>
+        <h4>Price: <strong th:text="*{service.price}"></strong></h4>
+    </div>
+</div>
+</body>
+</html>

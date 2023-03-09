@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{/head}"></div>
+<body>
+<div class="card" >
+    <img class="card-img" src="/images/pedicure.png" alt="picture">
+    <div class="card-img-overlay">
+        <h1 class="text-center">
+            Pedicure
+        </h1>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <h1>Pedicure</h1>
+                    <div th:each="pedicure : ${allServices}"
+                         th:object="${pedicure}"
+                         th:if="${pedicure.category==T(com.example.dealership1.domain.entity.ServiceCategory).PEDICURE}"
+                         class="col-md-4 d-flex flex-column bg-text mb-3 rounded-pill">
+                        <h2>Name: <strong th:text="*{name}"></strong></h2>
+                        <h4>Price: <strong th:text="*{price}"></strong></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{/head}"></div>
+<body>
+
+<div class="card" >
+    <img class="card-img" src="/images/nails1.png" alt="picture">
+    <div class="card-img-overlay">
+        <h1 class="text-center">
+            Manicure
+        </h1>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <h1>Manicure</h1>
+                    <div th:each="manicure : ${allServices}"
+                         th:object="${manicure}"
+                         th:if="${manicure.category==T(com.example.dealership1.domain.entity.ServiceCategory).MANICURE}"
+                         class="col-md-4 d-flex flex-column bg-text mb-3 rounded-pill">
+                            <h2>Name: <strong th:text="*{name}"></strong></h2>
+                            <h4>Price: <strong th:text="*{price}"></strong></h4>
+                        <form method="post"
+                              th:action="@{'add-transaction/cosmeticService/' + ${manicure.id}}">
+                            <button class="btn btn-dark align-bottom" type="submit">Purchase</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</body>
+</html>
