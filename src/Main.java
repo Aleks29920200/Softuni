@@ -36,5 +36,6 @@ public class Main {
         System.out.println("|" + marinatedPeppers + "  " + "|" +marinatedPeppersQuantity + "        " + " |" +marinatedPeppersId + "           |");
         System.out.println("|" + piggyBank + "  " + "|" +piggyBankQuantity + "    " + "|" +piggyBankId + "      |");
         System.out.println("==================================================");
+        System.out.println(".");
     }
 }
