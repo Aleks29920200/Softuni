@@ -1,5 +1,3 @@
-# softuniProjects
-
 ☕ Coffee Shop Web Application
 A full-stack Java web application built with Spring Boot, designed to manage orders in a small cafe environment. This project demonstrates the core principles of the Spring MVC framework, data persistence with JPA, and server-side validation.
 
@@ -80,3 +78,90 @@ mvn spring-boot:run
 Access the app:
 
 Open http://localhost:8080 in your browser.
+
+🛒 Shopping List Web Application
+A full-stack Java web application built with Spring Boot, designed to manage household shopping lists. This project was developed as part of the Spring Fundamentals course at SoftUni, focusing on CRUD operations, database relationships, and web security.
+
+🚀 Features
+User Authentication: * Secure Registration and Login functionality.
+
+Access control logic to protect shopping list data.
+
+Product Management:
+
+Add new products with specific details (Name, Price, Category, Expiration Date).
+
+Products are categorized into types like Food, Drink, Household, and Other.
+
+Live Dashboard:
+
+View all current items in the shopping list.
+
+Real-time calculation of the Total Price of all items in the list.
+
+Shopping Actions:
+
+"Buy" items to remove them from the list once purchased.
+
+"Buy All" functionality to clear the entire list at once.
+
+Database Seeding: * Automatically populates the database with essential categories upon the first startup.
+
+🛠️ Tech Stack
+Backend: Java 11/17, Spring Boot
+
+Data Access: Spring Data JPA, Hibernate, MySQL
+
+Template Engine: Thymeleaf, HTML5, CSS3
+
+Validation: Hibernate Validator (Bean Validation API)
+
+Security: Custom Session-based Authentication / Interceptors
+
+🏗️ Architecture
+The project follows a clean Layered Architecture pattern:
+
+web: Controllers responsible for handling HTTP requests, form submissions, and view navigation.
+
+service: The business logic layer where product processing and user authentication logic reside.
+
+repository: Data access layer using JpaRepository for MySQL communication.
+
+model:
+
+Entities: Persistent objects mapping to the database (User, Product, Category).
+
+DTOs/BindingModels: Objects used for data validation and transfer between the front-end and back-end.
+
+init: Contains the CommandLineRunner used for initial database seeding.
+
+🔧 Setup & Installation
+Clone the repository:
+
+Bash
+git clone https://github.com/Aleks29920200/Softuni.git
+cd Softuni/PrepForSpringFundamentals/shopping_list
+Configure Database:
+
+Create a MySQL database named shopping_list.
+
+Open src/main/resources/application.properties.
+
+Update spring.datasource.username and spring.datasource.password with your MySQL credentials.
+
+Build and Run:
+
+Use your preferred IDE (IntelliJ/Eclipse) or run via terminal:
+
+Bash
+mvn spring-boot:run
+Access the application:
+
+Open your browser and navigate to http://localhost:8080.
+
+📋 Database Requirements
+Users: Unique username and email required.
+
+Products: Must have a name (3-20 characters), price (positive), and a category.
+
+Categories: Predefined values (Food, Drink, Household, Other).
