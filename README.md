@@ -251,3 +251,85 @@ Songs: Performer and Title must be between 3 and 20 characters. Release date can
 Styles: The system supports predefined styles like Pop, Rock, and Jazz.
 
 Users: Unique usernames and emails are required for registration.
+
+🛡️ Spring Fundamentals Final Exam Project
+This repository contains the implementation of the final exam for the Spring Fundamentals course at SoftUni. It is a high-stakes project designed to demonstrate proficiency in building a secure, data-driven web application using Spring Boot, Spring Data JPA, and Thymeleaf.
+
+🚀 Project Overview
+The application is a task or resource management system (typically themed around "Battle/Heroes" or "Planner" depending on the specific exam variant) that facilitates:
+
+User Authentication: Complete Registration and Login flow with hashed passwords and session management.
+
+Domain Logic: Complex interactions between entities, including owner-ship of items, status updates, and category-based filtering.
+
+Data Integrity: Strict server-side validation to ensure all business rules are met before persisting data.
+
+Dynamic UI: A responsive dashboard that updates based on the logged-in user's specific data and global statistics.
+
+🛠️ Tech Stack
+Backend: Java 11/17, Spring Boot
+
+Data Access: Spring Data JPA, Hibernate, MySQL/MariaDB
+
+Template Engine: Thymeleaf with custom fragments for reusable UI components
+
+Validation: Hibernate Validator (Bean Validation 2.0)
+
+Security: Session-based authentication using Interceptors or Spring Security (depending on the specific exam requirements)
+
+🏗️ Architecture & Design Patterns
+The project is structured to ensure high maintainability and clear separation of concerns:
+
+web / controller: Handles HTTP GET/POST requests and manages the BindingResult for form validation.
+
+service: Implements the business logic, mapping between Entities and DTOs.
+
+repository: Provides an abstraction layer for database operations using derived query methods.
+
+model:
+
+Entities: Represents the database schema (e.g., User, Task/Hero, Category).
+
+DTOs (Data Transfer Objects): Separated into BindingModels (for input) and ViewModels (for output) to protect the domain model.
+
+init / seeders: Ensures the database has the required categories/enums populated on startup.
+
+📋 Core Requirements & Validation
+To pass the rigorous exam criteria, the project implements:
+
+String Constraints: Username, Password, and Name length requirements.
+
+Numerical Constraints: Positive prices, levels, or durations.
+
+Date Validation: Ensuring dates are either in the past or future as required by the business logic.
+
+Relationship Mapping: Effective use of @ManyToOne and @ManyToMany mappings to link users to their respective resources.
+
+🔧 Local Setup
+Clone the Repo:
+
+Bash
+git clone https://github.com/Aleks29920200/Softuni.git
+cd Softuni/spring_fundamentals_exam
+Database Configuration:
+
+Create a MySQL schema (e.g., exam_db).
+
+Configure src/main/resources/application.properties with your local DB credentials.
+
+Run:
+
+Start the application via your IDE or use mvn spring-boot:run.
+
+The application will be available at http://localhost:8080.
+
+📝 Exam Criteria Met
+[x] Correct Layered Architecture.
+
+[x] Proper Database Seeding.
+
+[x] Full CRUD functionality for core entities.
+
+[x] Secure Session Management.
+
+[x] Error handling and data validation.
